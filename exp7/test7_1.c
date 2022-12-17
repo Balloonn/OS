@@ -6,7 +6,7 @@ int buf_1[2], buf_2[2];
 sem_t sem_1, sem_2, sem_3, sem_4;
 
 void readData1 () {
-    FILE *fp = fopen("1.data", "r");
+    FILE *fp = fopen("1.dat", "r");
     sem_wait(&sem_1);
     for(int i = 0; !feof(fp); i ++) {
         fscanf(fp, "%d", &buf_1[i]);
@@ -16,7 +16,7 @@ void readData1 () {
 }
 
 void readData2() {
-    FILE *fp = fopen("2.data", "r");
+    FILE *fp = fopen("2.dat", "r");
     sem_wait(&sem_2);
     for(int i = 0; !feof(fp); i ++) {
         fscanf(fp, "%d", &buf_2[i]);
